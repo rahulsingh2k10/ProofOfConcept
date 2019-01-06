@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Private Methods -
+    /**
+      * This method loads the Navigation and View Controller and displays the screen on device.
+     */
     private func launchHomeScreen() {
         window = UIWindow(frame: UIScreen.main.bounds)
 

@@ -9,5 +9,6 @@
 import UIKit
 
 class PlanetTableViewCell: UITableViewCell {
+    /// Outlet to display the **Name** of the **Planet**
     @IBOutlet weak var planetNameLabel: UILabel!
 }

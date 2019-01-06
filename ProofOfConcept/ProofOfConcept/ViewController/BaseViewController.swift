@@ -12,7 +12,10 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addObserver()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(networkStausChanged(_:)),
+                                               name: Constants.NETWORK_CHANGED_NOTIFICATION_NAME,
+                                               object: .none)
     }
 
     deinit {
@@ -24,6 +27,12 @@ class BaseViewController: UIViewController {
     }
 
     // MARK: - Public Methods -
+    /**
+      * This method is triggered eveytime when there is change in the status of Internet Connectivity.
+     
+     - Parameter status: This is an enum of **ConnectionType**. This tells the application of
+                         the type of Internet Connection (e.g: Wifi, Cellular or No Connection)
+     */
     public func networkStatusUpdated(status: ConnectionType) {
         switch status {
         case .none:
@@ -35,7 +44,7 @@ class BaseViewController: UIViewController {
     }
 
     /**
-     * This method present the alert on the screen.
+      * This method present the alert on the screen.
 
      - Parameter title: The title of the Alert. Defaults to empty string.
      - Parameter message: The message for the Alert.
@@ -58,14 +67,6 @@ class BaseViewController: UIViewController {
         }
 
         present(alertController, animated: true, completion: .none)
-    }
-
-    // MARK: - Public Methods -
-    final private func addObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(networkStausChanged(_:)),
-                                               name: Constants.NETWORK_CHANGED_NOTIFICATION_NAME,
-                                               object: .none)
     }
 
     // MARK: - Notification Methods -

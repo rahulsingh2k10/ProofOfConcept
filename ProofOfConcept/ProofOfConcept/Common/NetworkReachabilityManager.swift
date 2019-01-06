@@ -9,9 +9,11 @@
 import UIKit
 import Reachability
 
+let HOST_NAME = "www.google.com"
+
 final class NetworkReachabilityManager: NSObject {
     public var connectionType: ConnectionType = .none
-    private let reachability = Reachability(hostname: "www.google.com")
+    private let reachability = Reachability(hostname: HOST_NAME)
 
     public static let sharedReachabilityManager: NetworkReachabilityManager = {
         let networkReachability = NetworkReachabilityManager()

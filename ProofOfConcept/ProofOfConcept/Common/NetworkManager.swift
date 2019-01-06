@@ -33,7 +33,7 @@ final class NetworkManager: NSObject, ConnectionManager {
     }()
 
     /**
-     This method fetches the data from the service.
+      * This method fetches the data from the service.
 
      - Parameter urlString: The endPoint of the Transaction.
      - Parameter completionHandler: This closure gets called once the transaction is complete.

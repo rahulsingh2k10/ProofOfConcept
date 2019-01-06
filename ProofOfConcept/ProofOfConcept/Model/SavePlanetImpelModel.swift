@@ -16,8 +16,11 @@ let PLANET_CLIMATE = "climate"
 let PLANET_TERRAIN = "terrain"
 
 class SavePlanetImpelModel: NSObject {
-    let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+    /**
+      * This method saves the JSON Response to the Core Data
 
+     - Parameter dictionary: The JSON dictionary retreived from the service.
+     */
     public func save(dictionary: NSDictionary) {
         if let rowDict = dictionary["results"] as? NSArray {
             let planetCoreDataModel = PlanetCoreDataModel()
@@ -25,34 +28,29 @@ class SavePlanetImpelModel: NSObject {
                 planetCoreDataModel.createPlanetEntity(dictionary: dict as! NSDictionary)
             }
 
+            let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+
             do {
                 try context.save()
             } catch {
-                print("Failed saving")
+                print("Save Failed")
             }
-        }
-    }
-
-    public func fetch() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: PLANET_ENTITY_NAME)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                print(data.value(forKey: PLANET_NAME) as! String)
-            }
-            
-        } catch {
-            print("Failed")
         }
     }
 }
 
 
 class PlanetCoreDataModel: NSObject {
-    let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+    /**
+      * This method creates the **Planet** NSManagedObject based on the dictonary. This method has
+        **@discardableResult** at the beginning which means that the return value can be ignored.
 
+     - Parameter dictionary: The JSON dictionary retreived from the service.
+     - Returns: The **Planet**'s NSManagedObject object.
+     */
     @discardableResult func createPlanetEntity(dictionary: NSDictionary) -> NSManagedObject {
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+
         let entity = NSEntityDescription.entity(forEntityName: PLANET_ENTITY_NAME, in: context)
 
         let planet = NSManagedObject(entity: entity!, insertInto: context)

@@ -10,8 +10,10 @@ import UIKit
 import CoreData
 
 class ViewController: BaseViewController, NSFetchedResultsControllerDelegate {
+    /// Outlet for TableView to display the content
     @IBOutlet weak private var appTableView: UITableView!
 
+    /// This is used to manage the results of a **Planet**'s fetch request and display data.
     private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
 
     // MARK: - ViewController Life Cycle Methods -
@@ -40,6 +42,9 @@ class ViewController: BaseViewController, NSFetchedResultsControllerDelegate {
 
 // MARK: - Private Methods -
 extension ViewController {
+    /**
+      * This method fetches the **Planet** details from the Core Data and reloads the TableView.
+      */
     private func loadSavedData() {
         if fetchedResultsController == nil {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: PLANET_ENTITY_NAME)
@@ -60,6 +65,10 @@ extension ViewController {
         }
     }
 
+    /**
+      * This method calls the API and fetches the data from the server. Once, the data is received,
+        it populates the **Planet** details onto the table.
+      */
     private func callTransaction() {
         let endPoint = "\(Constants.BASE_URL)\(Constants.PLANET_END_POINT)"
         NetworkManager.sharedInstance.fetchData(urlString: endPoint) {[unowned self] (error) in

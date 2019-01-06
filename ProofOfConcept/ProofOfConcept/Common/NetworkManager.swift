@@ -43,7 +43,7 @@ final class NetworkManager: NSObject, ConnectionManager {
         let nwReachable = networkReachable()
         guard nwReachable == nil else {
             Constants.runOnMainQueue {
-                completionHandler(.none, nwReachable)
+                completionHandler(nwReachable)
             }
 
             return
@@ -51,7 +51,7 @@ final class NetworkManager: NSObject, ConnectionManager {
 
         guard let url = URL(string: urlString) else {
             Constants.runOnMainQueue {
-                completionHandler (.none, .none)
+                completionHandler (.none)
             }
 
             return
@@ -62,7 +62,7 @@ final class NetworkManager: NSObject, ConnectionManager {
         let task = session.dataTask(with: url) {(data, response, error) in
             guard error == nil else {
                 Constants.runOnMainQueue {
-                    completionHandler(.none, error)
+                    completionHandler(error)
                 }
 
                 return
@@ -71,23 +71,16 @@ final class NetworkManager: NSObject, ConnectionManager {
             guard let content = data else {
                 let err = Constants.noDataFoundError()
                 Constants.runOnMainQueue {
-                    completionHandler(.none, err)
+                    completionHandler(err)
                 }
 
                 return
             }
 
-            guard let model = JSONParser.parseFactModel(data: content) else {
-                let err = Constants.noDataFoundError()
-                Constants.runOnMainQueue {
-                    completionHandler(.none, err)
-                }
-
-                return
-            }
+            JSONParser.savePlanets(data: content)
 
             Constants.runOnMainQueue {
-                completionHandler(model, .none)
+                completionHandler (.none)
             }
         }
 

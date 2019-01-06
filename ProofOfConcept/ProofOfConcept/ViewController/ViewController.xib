@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="ProofOfConcept" customModuleProvider="target">
             <connections>
+                <outlet property="appTableView" destination="87v-cq-UuN" id="wJ0-Oa-Fnz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,9 +20,26 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="87v-cq-UuN">
+                    <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iNK-Ai-gbJ"/>
+                        <outlet property="delegate" destination="-1" id="xiX-U8-FqB"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="87v-cq-UuN" secondAttribute="trailing" id="7hS-Oj-ymb"/>
+                <constraint firstItem="87v-cq-UuN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zhn-wX-tFO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="87v-cq-UuN" secondAttribute="bottom" id="rrD-Yv-Igk"/>
+                <constraint firstItem="87v-cq-UuN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xRX-Yc-1Kv"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="55.200000000000003" y="39.90147783251232"/>
         </view>
     </objects>
 </document>

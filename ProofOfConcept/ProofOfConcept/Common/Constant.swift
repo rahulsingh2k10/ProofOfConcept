@@ -23,7 +23,7 @@ public enum ConnectionType {
     }
 }
 
-typealias TransactionDidComplete = (AnyObject?, Error?) -> ()
+typealias TransactionDidComplete = (Error?) -> ()
 
 class Constants {
     class func runOnMainQueue(completionHandler: @escaping () -> ()) {
@@ -70,6 +70,7 @@ extension Constants {
     static let EMPTY_STRING = NSLocalizedString("", comment: "Message")
     static let OK_TITLE = NSLocalizedString("OK", comment: "Message")
     static let ERROR_TITLE = NSLocalizedString("Error", comment: "Title")
+    static let PLANET_NAME_TITLE = NSLocalizedString("Planet Names", comment: "Title")
 }
 
 
@@ -82,10 +83,17 @@ extension Constants {
 // MARK: - End Points -
 extension Constants {
     static let BASE_URL = "https://swapi.co/api"
+    static let PLANET_END_POINT = "/planets"
 }
 
 
 // MARK: - Notification Names -
 extension Constants {
     static let NETWORK_CHANGED_NOTIFICATION_NAME = Notification.Name("NetworkChanged")
+}
+
+
+//MARK: - TableView Cell Identifiers -
+extension Constants {
+    static let PLANET_TABLEVIEW_CELL_IDENTIFIER = "PlanetTableViewCell"
 }

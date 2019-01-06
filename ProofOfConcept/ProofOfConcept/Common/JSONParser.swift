@@ -13,22 +13,21 @@ class JSONParser: NSObject {
      This method serialises the Data to Model.
 
      - Parameter data: The data to be serialised to Model.
-     - Parameter completionHandler: This closure gets called once the transaction is complete.
      */
-    class func parseFactModel(data: Data) -> PlanetList? {
+    class func savePlanets(data: Data) {
         guard let dataString = NSString(data: data, encoding: String.Encoding.ascii.rawValue) else {
-            return .none
+            return
         }
 
         guard let jsonData = dataString.data(using: String.Encoding.utf8.rawValue) else {
-            return .none
+            return
         }
 
-        guard let jsonResult: NSDictionary = try? JSONSerialization.jsonObject(with: jsonData as Data, options: []) as! NSDictionary else {
-            return .none
+        guard let jsonResult = try? JSONSerialization.jsonObject(with: jsonData as Data, options: []) as! NSDictionary else {
+            return
         }
 
-        let fm = PlanetList.init(dictionary: jsonResult)
-        return fm
+        let spd = SavePlanetImpelModel()
+        spd.save(dictionary: jsonResult)
     }
 }

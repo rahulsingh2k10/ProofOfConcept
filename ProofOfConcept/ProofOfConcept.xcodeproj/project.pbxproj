@@ -12,10 +12,13 @@
 		1FB1FBDA21E133AA00388BD3 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBCF21E133AA00388BD3 /* NetworkReachabilityManager.swift */; };
 		1FB1FBDC21E133AA00388BD3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD121E133AA00388BD3 /* NetworkManager.swift */; };
 		1FB1FBDD21E133AA00388BD3 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD221E133AA00388BD3 /* JSONParser.swift */; };
-		1FB1FBDE21E133AA00388BD3 /* PlanetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD421E133AA00388BD3 /* PlanetList.swift */; };
+		1FB1FBDE21E133AA00388BD3 /* SavePlanetImpelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD421E133AA00388BD3 /* SavePlanetImpelModel.swift */; };
 		1FB1FBDF21E133AA00388BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD621E133AA00388BD3 /* ViewController.swift */; };
 		1FB1FBE021E133AA00388BD3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1FBD721E133AA00388BD3 /* ViewController.xib */; };
 		1FB1FBE221E140B400388BD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBE121E140B400388BD3 /* BaseViewController.swift */; };
+		1FB1FBE421E1AF5800388BD3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBE321E1AF5800388BD3 /* CoreDataManager.swift */; };
+		1FB1FBEC21E1F0FE00388BD3 /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBEA21E1F0FE00388BD3 /* PlanetTableViewCell.swift */; };
+		1FB1FBED21E1F0FE00388BD3 /* PlanetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1FBEB21E1F0FE00388BD3 /* PlanetTableViewCell.xib */; };
 		1FD17D9021E11D74007337EC /* ProofOfConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD17D8E21E11D74007337EC /* ProofOfConcept.xcdatamodeld */; };
 		1FD17D9221E11D7A007337EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD17D9121E11D7A007337EC /* Assets.xcassets */; };
 		1FD17D9521E11D7A007337EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD17D9321E11D7A007337EC /* LaunchScreen.storyboard */; };
@@ -40,10 +43,13 @@
 		1FB1FBCF21E133AA00388BD3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		1FB1FBD121E133AA00388BD3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1FB1FBD221E133AA00388BD3 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		1FB1FBD421E133AA00388BD3 /* PlanetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetList.swift; sourceTree = "<group>"; };
+		1FB1FBD421E133AA00388BD3 /* SavePlanetImpelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePlanetImpelModel.swift; sourceTree = "<group>"; };
 		1FB1FBD621E133AA00388BD3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FB1FBD721E133AA00388BD3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		1FB1FBE121E140B400388BD3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1FB1FBE321E1AF5800388BD3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1FB1FBEA21E1F0FE00388BD3 /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
+		1FB1FBEB21E1F0FE00388BD3 /* PlanetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetTableViewCell.xib; sourceTree = "<group>"; };
 		1FD17D8421E11D74007337EC /* ProofOfConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProofOfConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD17D8F21E11D74007337EC /* ProofOfConcept.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProofOfConcept.xcdatamodel; sourceTree = "<group>"; };
 		1FD17D9121E11D7A007337EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 				1FB1FBCE21E133AA00388BD3 /* Constant.swift */,
 				1FB1FBD121E133AA00388BD3 /* NetworkManager.swift */,
 				1FB1FBCF21E133AA00388BD3 /* NetworkReachabilityManager.swift */,
+				1FB1FBE321E1AF5800388BD3 /* CoreDataManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -97,7 +104,7 @@
 		1FB1FBD321E133AA00388BD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1FB1FBD421E133AA00388BD3 /* PlanetList.swift */,
+				1FB1FBD421E133AA00388BD3 /* SavePlanetImpelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +117,15 @@
 				1FB1FBE121E140B400388BD3 /* BaseViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1FB1FBE921E1F0EF00388BD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FB1FBEA21E1F0FE00388BD3 /* PlanetTableViewCell.swift */,
+				1FB1FBEB21E1F0FE00388BD3 /* PlanetTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1FD17D7B21E11D74007337EC = {
@@ -135,6 +151,7 @@
 		1FD17D8621E11D74007337EC /* ProofOfConcept */ = {
 			isa = PBXGroup;
 			children = (
+				1FB1FBE921E1F0EF00388BD3 /* Views */,
 				1FB1FBCB21E133AA00388BD3 /* Appdelegate */,
 				1FB1FBD521E133AA00388BD3 /* ViewController */,
 				1FB1FBD321E133AA00388BD3 /* Model */,
@@ -259,6 +276,7 @@
 				1FD17D9521E11D7A007337EC /* LaunchScreen.storyboard in Resources */,
 				1FB1FBE021E133AA00388BD3 /* ViewController.xib in Resources */,
 				1FD17D9221E11D7A007337EC /* Assets.xcassets in Resources */,
+				1FB1FBED21E1F0FE00388BD3 /* PlanetTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,13 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FB1FBDC21E133AA00388BD3 /* NetworkManager.swift in Sources */,
-				1FB1FBDE21E133AA00388BD3 /* PlanetList.swift in Sources */,
+				1FB1FBDE21E133AA00388BD3 /* SavePlanetImpelModel.swift in Sources */,
 				1FB1FBDF21E133AA00388BD3 /* ViewController.swift in Sources */,
+				1FB1FBEC21E1F0FE00388BD3 /* PlanetTableViewCell.swift in Sources */,
 				1FB1FBDD21E133AA00388BD3 /* JSONParser.swift in Sources */,
 				1FB1FBD821E133AA00388BD3 /* AppDelegate.swift in Sources */,
 				1FB1FBE221E140B400388BD3 /* BaseViewController.swift in Sources */,
 				1FD17D9021E11D74007337EC /* ProofOfConcept.xcdatamodeld in Sources */,
 				1FB1FBDA21E133AA00388BD3 /* NetworkReachabilityManager.swift in Sources */,
+				1FB1FBE421E1AF5800388BD3 /* CoreDataManager.swift in Sources */,
 				1FB1FBD921E133AA00388BD3 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

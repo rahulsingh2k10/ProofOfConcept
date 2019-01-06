@@ -103,7 +103,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1.0;
+        return 1.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,8 +111,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                                                  for: indexPath) as! PlanetTableViewCell
 
         let person = fetchedResultsController.object(at: indexPath) as! NSManagedObject
-        let name = person.value(forKey: PLANET_NAME) as! String
-        cell.planetNameLabel.text = name
+        let name = person.value(forKey: PLANET_NAME) as? String
+        cell.planetNameLabel.text = name ?? Constants.NA_STRING
 
         return cell
     }

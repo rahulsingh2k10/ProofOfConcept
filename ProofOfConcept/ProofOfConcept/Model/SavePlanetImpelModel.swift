@@ -21,17 +21,17 @@ class SavePlanetImpelModel: NSObject {
 
      - Parameter dictionary: The JSON dictionary retreived from the service.
       */
-    public func save(dictionary: NSDictionary) {
+    @discardableResult public func save(dictionary: NSDictionary) -> Bool {
         if let rowDict = dictionary["results"] as? NSArray {
             let planetCoreDataModel = PlanetCoreDataModel()
 
             for dict in rowDict {
                 guard let pDetail = dict as? NSDictionary else {
-                    return
+                    return false
                 }
 
                 guard let planetName = pDetail[PLANET_NAME] as? String, !planetName.isEmpty else {
-                    return
+                    return false
                 }
 
                 if !isExist(pName: planetName) {
@@ -43,10 +43,31 @@ class SavePlanetImpelModel: NSObject {
 
             do {
                 try context.save()
+                return true
             } catch {
                 print("Save Failed")
+                return false
             }
+        } else {
+            return false
         }
+    }
+
+    /**
+      * This method validates whether the **Planet** already exisits in the Database.
+        If it does, then it returns **True** else returns **False**.
+
+     - Parameter pName: The name of the **Planet**
+     - Returns: Boolean value.
+      */
+    public func isExist(pName: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: PLANET_ENTITY_NAME)
+        let predicateString = "\(PLANET_NAME) LIKE[CD] '\(pName)'"
+        let predicate = NSPredicate(format: predicateString)
+        fetchRequest.predicate = predicate
+
+        let res = try! managedObjectContext().fetch(fetchRequest)
+        return res.count > 0 ? true : false
     }
 
     // MARK: - Private Methods -
@@ -59,23 +80,6 @@ class SavePlanetImpelModel: NSObject {
         let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
 
         return context
-    }
-
-    /**
-      * This method validates whether the **Planet** already exisits in the Database.
-        If it does, then it returns **True** else returns **False**.
-
-     - Parameter pName: The name of the **Planet**
-     - Returns: Boolean value.
-      */
-    private func isExist(pName: String) -> Bool {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: PLANET_ENTITY_NAME)
-        let predicateString = "\(PLANET_NAME) LIKE[CD] '\(pName)'"
-        let predicate = NSPredicate(format: predicateString)
-        fetchRequest.predicate = predicate
-
-        let res = try! managedObjectContext().fetch(fetchRequest)
-        return res.count > 0 ? true : false
     }
 }
 

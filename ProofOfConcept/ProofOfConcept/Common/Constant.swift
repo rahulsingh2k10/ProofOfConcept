@@ -67,6 +67,7 @@ extension Constants {
 //MARK: - Localizable Strings -
 extension Constants {
     static let SORRY_TITLE = NSLocalizedString("Sorry!", comment: "Title")
+    static let NA_STRING = NSLocalizedString(" -- ", comment: "Title")
     static let EMPTY_STRING = NSLocalizedString("", comment: "Message")
     static let OK_TITLE = NSLocalizedString("OK", comment: "Message")
     static let ERROR_TITLE = NSLocalizedString("Error", comment: "Title")

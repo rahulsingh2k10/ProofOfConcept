@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB1A98321E2714A00982EE8 /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1A98221E2714A00982EE8 /* Response.json */; };
+		1FB1A98421E2758200982EE8 /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1A98221E2714A00982EE8 /* Response.json */; };
 		1FB1FBD821E133AA00388BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBCC21E133AA00388BD3 /* AppDelegate.swift */; };
 		1FB1FBD921E133AA00388BD3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBCE21E133AA00388BD3 /* Constant.swift */; };
 		1FB1FBDA21E133AA00388BD3 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1FBCF21E133AA00388BD3 /* NetworkReachabilityManager.swift */; };
@@ -38,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		10390D4F793293067176339B /* Pods_ProofOfConcept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProofOfConcept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB1A98221E2714A00982EE8 /* Response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
 		1FB1FBCC21E133AA00388BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FB1FBCE21E133AA00388BD3 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1FB1FBCF21E133AA00388BD3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		1FD17D9E21E11D7A007337EC /* ProofOfConceptTests */ = {
 			isa = PBXGroup;
 			children = (
+				1FB1A98221E2714A00982EE8 /* Response.json */,
 				1FD17D9F21E11D7A007337EC /* ProofOfConceptTests.swift */,
 				1FD17DA121E11D7A007337EC /* Info.plist */,
 			);
@@ -275,6 +279,7 @@
 			files = (
 				1FD17D9521E11D7A007337EC /* LaunchScreen.storyboard in Resources */,
 				1FB1FBE021E133AA00388BD3 /* ViewController.xib in Resources */,
+				1FB1A98421E2758200982EE8 /* Response.json in Resources */,
 				1FD17D9221E11D7A007337EC /* Assets.xcassets in Resources */,
 				1FB1FBED21E1F0FE00388BD3 /* PlanetTableViewCell.xib in Resources */,
 			);
@@ -284,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB1A98321E2714A00982EE8 /* Response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

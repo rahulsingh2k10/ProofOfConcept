@@ -20,12 +20,23 @@ class SavePlanetImpelModel: NSObject {
       * This method saves the JSON Response to the Core Data
 
      - Parameter dictionary: The JSON dictionary retreived from the service.
-     */
+      */
     public func save(dictionary: NSDictionary) {
         if let rowDict = dictionary["results"] as? NSArray {
             let planetCoreDataModel = PlanetCoreDataModel()
+
             for dict in rowDict {
-                planetCoreDataModel.createPlanetEntity(dictionary: dict as! NSDictionary)
+                guard let pDetail = dict as? NSDictionary else {
+                    return
+                }
+
+                guard let planetName = pDetail[PLANET_NAME] as? String, !planetName.isEmpty else {
+                    return
+                }
+
+                if !isExist(pName: planetName) {
+                    planetCoreDataModel.createPlanetEntity(dictionary: dict as! NSDictionary)
+                }
             }
 
             let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
@@ -37,6 +48,35 @@ class SavePlanetImpelModel: NSObject {
             }
         }
     }
+
+    // MARK: - Private Methods -
+    /**
+      * This method returns the current Managed Object Context
+
+     - Returns: The **NSManagedObjectContext** object.
+      */
+    private func managedObjectContext() -> NSManagedObjectContext {
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+
+        return context
+    }
+
+    /**
+      * This method validates whether the **Planet** already exisits in the Database.
+        If it does, then it returns **True** else returns **False**.
+
+     - Parameter pName: The name of the **Planet**
+     - Returns: Boolean value.
+      */
+    private func isExist(pName: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: PLANET_ENTITY_NAME)
+        let predicateString = "\(PLANET_NAME) LIKE[CD] '\(pName)'"
+        let predicate = NSPredicate(format: predicateString)
+        fetchRequest.predicate = predicate
+
+        let res = try! managedObjectContext().fetch(fetchRequest)
+        return res.count > 0 ? true : false
+    }
 }
 
 
@@ -47,7 +87,7 @@ class PlanetCoreDataModel: NSObject {
 
      - Parameter dictionary: The JSON dictionary retreived from the service.
      - Returns: The **Planet**'s NSManagedObject object.
-     */
+      */
     @discardableResult func createPlanetEntity(dictionary: NSDictionary) -> NSManagedObject {
         let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
 

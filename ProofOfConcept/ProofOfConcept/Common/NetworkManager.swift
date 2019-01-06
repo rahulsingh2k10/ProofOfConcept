@@ -37,7 +37,7 @@ final class NetworkManager: NSObject, ConnectionManager {
 
      - Parameter urlString: The endPoint of the Transaction.
      - Parameter completionHandler: This closure gets called once the transaction is complete.
-     */
+      */
     public func fetchData(urlString: String,
                           completionHandler: @escaping TransactionDidComplete) {
         let nwReachable = networkReachable()

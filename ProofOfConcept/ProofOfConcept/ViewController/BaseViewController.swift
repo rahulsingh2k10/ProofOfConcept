@@ -32,7 +32,7 @@ class BaseViewController: UIViewController {
      
      - Parameter status: This is an enum of **ConnectionType**. This tells the application of
                          the type of Internet Connection (e.g: Wifi, Cellular or No Connection)
-     */
+      */
     public func networkStatusUpdated(status: ConnectionType) {
         switch status {
         case .none:
@@ -50,7 +50,7 @@ class BaseViewController: UIViewController {
      - Parameter message: The message for the Alert.
      - Parameter button: List of Button Titles. Defaults to List of OK String.
      - Parameter alertType: Type of Alert to be presented. Defaults to .alert.
-     */
+      */
     public func presentAlert(title: String? = Constants.EMPTY_STRING,
                              message: String?,
                              button: [String] = [Constants.OK_TITLE],

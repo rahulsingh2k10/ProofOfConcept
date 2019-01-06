@@ -13,7 +13,7 @@ class JSONParser: NSObject {
       * This method serialises the Data and saves it to the Database.
 
      - Parameter data: The data to be serialised.
-     */
+      */
     class func savePlanets(data: Data) {
         guard let dataString = NSString(data: data, encoding: String.Encoding.ascii.rawValue) else {
             return

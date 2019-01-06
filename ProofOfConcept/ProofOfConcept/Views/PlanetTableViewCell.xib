@@ -25,8 +25,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-vs-O8O">
-                        <rect key="frame" x="0.0" y="42.5" width="283" height="2"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-vs-O8O" userLabel="Separator">
+                        <rect key="frame" x="5" y="42.5" width="273" height="2"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="c7K-Sc-wlR"/>
@@ -40,9 +40,9 @@
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1ou-Hw-r1B" secondAttribute="trailing" constant="16" id="4hw-io-kw8"/>
                     <constraint firstAttribute="bottom" secondItem="zI3-vs-O8O" secondAttribute="bottom" id="Nsc-Wb-wUX"/>
                     <constraint firstItem="1ou-Hw-r1B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aOE-LF-xcc"/>
-                    <constraint firstItem="zI3-vs-O8O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hh1-b8-Gue"/>
+                    <constraint firstItem="zI3-vs-O8O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hh1-b8-Gue"/>
                     <constraint firstAttribute="bottom" secondItem="1ou-Hw-r1B" secondAttribute="bottom" constant="12" id="jsg-Qx-c6S"/>
-                    <constraint firstAttribute="trailing" secondItem="zI3-vs-O8O" secondAttribute="trailing" id="kgK-1R-8CR"/>
+                    <constraint firstAttribute="trailing" secondItem="zI3-vs-O8O" secondAttribute="trailing" constant="5" id="kgK-1R-8CR"/>
                     <constraint firstItem="1ou-Hw-r1B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="m7Y-zW-E5r"/>
                 </constraints>
             </tableViewCellContentView>

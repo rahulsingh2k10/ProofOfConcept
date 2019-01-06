@@ -20,9 +20,10 @@ class ViewController: BaseViewController, NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.topItem?.title = Constants.HOME_TITLE
+
         let nib = UINib(nibName: Constants.PLANET_TABLEVIEW_CELL_IDENTIFIER, bundle: nil)
-        appTableView.register(nib,
-                              forCellReuseIdentifier: Constants.PLANET_TABLEVIEW_CELL_IDENTIFIER)
+        appTableView.register(nib, forCellReuseIdentifier: Constants.PLANET_TABLEVIEW_CELL_IDENTIFIER)
 
         loadSavedData()
     }
@@ -84,7 +85,7 @@ extension ViewController {
 
 
 // MARK: - UITableViewDataSource Methods -
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -99,6 +100,10 @@ extension ViewController: UITableViewDataSource {
         }
 
         return sectionInfo.count
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1.0;
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

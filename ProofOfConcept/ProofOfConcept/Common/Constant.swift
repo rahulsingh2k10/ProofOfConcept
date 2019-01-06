@@ -71,6 +71,7 @@ extension Constants {
     static let OK_TITLE = NSLocalizedString("OK", comment: "Message")
     static let ERROR_TITLE = NSLocalizedString("Error", comment: "Title")
     static let PLANET_NAME_TITLE = NSLocalizedString("Planet Names", comment: "Title")
+    static let HOME_TITLE = NSLocalizedString("Home", comment: "Title")
 }
 
 
